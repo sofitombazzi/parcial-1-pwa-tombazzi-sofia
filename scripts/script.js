@@ -14,4 +14,13 @@ fetch(URL_POKEMON)
     //Traigo el primer resultado
     const primerResultado = results[0];
     console.log(primerResultado);
+    mostrarTarjeta();
 });
+
+//Armo mi mi primer tarjeta para mostrar la información
+    const mostrarTarjeta = (pokemon) => {
+        console.log(pokemon);
+        const contenedor = document.getElementById("contenedor");
+        console.log(contenedor);
+    }
+
