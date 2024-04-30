@@ -4,7 +4,7 @@ const URL_POKEMON = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
 //Pruebo que se vea en consola
 console.log(URL_POKEMON);
 
-//Armo mi mi primer tarjeta para mostrar la información
+//Armo mi primer tarjeta para mostrar la información
 const mostrarTarjeta = (pokemon) => {
     console.log(pokemon);
     //Traigo mi contenedor del HTML
