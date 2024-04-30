@@ -11,5 +11,7 @@ fetch(URL_POKEMON)
 //Imprimo los resultados en forma de lista y los guardo en la constante results
 .then(result => {
     const results = result.results;
-    console.log(results);
+    //Traigo el primer resultado
+    const primerResultado = results[0];
+    console.log(primerResultado);
 });
