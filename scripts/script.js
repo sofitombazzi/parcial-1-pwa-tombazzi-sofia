@@ -4,23 +4,35 @@ const URL_POKEMON = "https://pokeapi.co/api/v2/pokemon/";
 //Pruebo que se vea en consola
 console.log(URL_POKEMON);
 
+//Armo mi mi primer tarjeta para mostrar la información
+const mostrarTarjeta = (pokemon) => {
+    console.log(pokemon);
+    //Traigo mi contenedor del HTML
+    const contenedor = document.getElementById("contenedor");
+    //Creo el titulo
+    const titulo = document.createElement("h2");
+    titulo.innerText = pokemon.name;
+
+    const descripcion = document.createElement('p');
+
+    contenedor.appendChild(titulo, descripcion);
+    console.log(contenedor);
+}
+
+
 //Traigo lo que hay en la URL con Fetch
 fetch(URL_POKEMON)
 //Le pido la data en forma de JSON
 .then(data => data.json ())
 //Imprimo los resultados en forma de lista y los guardo en la constante results
 .then(result => {
+    
+    console.log(result);
     const results = result.results;
-    //Traigo el primer resultado
     const primerResultado = results[0];
-    console.log(primerResultado);
-    mostrarTarjeta();
+    mostrarTarjeta(primerResultado);
+
 });
 
-//Armo mi mi primer tarjeta para mostrar la información
-    const mostrarTarjeta = (pokemon) => {
-        console.log(pokemon);
-        const contenedor = document.getElementById("contenedor");
-        console.log(contenedor);
-    }
+
 
