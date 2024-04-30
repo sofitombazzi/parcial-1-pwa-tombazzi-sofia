@@ -10,7 +10,7 @@ const mostrarTarjeta = (pokemon) => {
     //Traigo mi contenedor del HTML
     const contenedor = document.getElementById("contenedor");
     contenedor.addEventListener('click', () => {
-        mostrarDetalle(pokemon);
+        mostrarDetalle(pokemon.id);
     })
     //Creo el titulo
     const titulo = document.createElement("h2");
@@ -23,8 +23,8 @@ const mostrarTarjeta = (pokemon) => {
 }
 
 //Creo funcion mostrar detalle
-    const mostrarDetalle = (pokemon) => {
-        window.location.href = "http://127.0.0.1:5500/paginas/detalle.html"
+    const mostrarDetalle = (id) => {
+        window.location.href = "http://127.0.0.1:5500/paginas/detalle.html?id=" + id;
     };
 
 
@@ -37,8 +37,10 @@ fetch(URL_POKEMON)
     
     console.log(result);
     const results = result.results;
-    const primerResultado = results[0];
-    mostrarTarjeta(primerResultado);
+    //Realizo un forEach para recorrer el array y devolver todos los element que es este caso son pokemones
+    results.forEach(element => {
+        mostrarTarjeta(element);
+    });
 
 });
 
